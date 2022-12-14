@@ -1,5 +1,5 @@
 count = 0
-ilist = (open(r'C:\Users\kaiyu\Documents\GitHub\AOC-2022\day4\4s.txt', 'r')).read().replace("\n", ",").split(',')
+ilist = (open(r'C:\Users\kaiyu\Documents\GitHub\AOC-2022\Day4\4s.txt', 'r')).read().replace("\n", ",").split(',')
 for x in range(len(ilist)):
     ilist[x] = ilist[x].split("-")
 for x in range(len(ilist)-1):
