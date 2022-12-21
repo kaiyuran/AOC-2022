@@ -1,6 +1,8 @@
-ilist = (open(r'C:\Users\kaiyu\Documents\GitHub\AOC-2022\Day5\5s.txt', 'r')).read().split('\n\n')
+ilist = (open(r'C:\Users\kaiyu\Documents\GitHub\AOC-2022\Day5\5.txt', 'r')).read().split('\n\n')
 crates = [ilist[0].split("\n")]
 count = 0
+coloumn = 3
+row = 3
 for x in range(len(crates)):
     crates[x] = (str(crates[x]).replace("    ",'x'))
     crates[x] = list(crates[x])
@@ -38,8 +40,8 @@ for x in crates[0]:
 nlist = (string.split(','))
 for x in range(len(nlist)):
     nlist[x] = list(nlist[x])
-finalist = [[0]*(3) for x in range(3)]
-print(finalist)
+finalist = [[0]*(coloumn) for x in range(row)]
+# print(finalist)
 for x in range(len(nlist)):
     for y in range(len(nlist[x])):
         if count < (len(nlist)):
@@ -50,7 +52,7 @@ for x in range(len(nlist)):
             # print(x,y, count)
             finalist[count][x] = nlist[x][y]
             count += 1
-print(finalist)
+# print(finalist)
 for x in range(len(finalist)):
     while True:
         try:
@@ -69,32 +71,27 @@ for x in range(len(controls)):
         controls[x][y] = int(controls[x][y])
 
 
+# print("hello\n",finalist)
 
 
-
-
-
-print(finalist)
-movingcrates = []
-for x in controls:
-    print("this is control {}".format(x))
-    # print(movingcrates)
-    cratesnum = x[0]
-    # print(cratesnum, type(cratesnum))
-    crateorigin = (x[1]-1)
-    # print(crateorigin, type(crateorigin))
-    cratesdes = (x[2]-1)
-    # print(cratesdes, type(cratesdes))
-    for y in range(cratesnum):
-        movingcrates.append(finalist[crateorigin][y])
-        # print(movingcrates)
-    for z in range(cratesnum):
-        finalist[cratesdes].insert(0,(movingcrates[(z)]))
-        finalist[crateorigin].remove(movingcrates[(z)])
-        # print(finalist)
-    movingcrates = []
-
-
-
-# print(movingcrates)
+# movingcrates = []
+# for x in controls:
+#     print("this is control {}".format(x))
+#     # print(movingcrates)
+#     cratesnum = x[0]
+#     # print(cratesnum, type(cratesnum))
+#     crateorigin = (x[1]-1)
+#     # print(crateorigin, type(crateorigin))
+#     cratesdes = (x[2]-1)
+#     # print(cratesdes, type(cratesdes))
+#     for y in range(cratesnum):
+#         movingcrates.append(finalist[crateorigin][y])
+#         # print(movingcrates)
+#     for z in range(cratesnum):
+#         finalist[cratesdes].insert(0,(movingcrates[(z)]))
+#         finalist[crateorigin].remove(movingcrates[(z)])
+#         # print(finalist)
+#     movingcrates = []
 # print(finalist)
+
+
